@@ -7,7 +7,6 @@ import me.mahendra.spring_demo.entities.Todo;
 import me.mahendra.spring_demo.repository.TodoRepository;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class TodoService {
@@ -28,15 +27,16 @@ public class TodoService {
     }
 
     public Todo updateTodo(Long id, Todo todo) {
-        Optional<Todo> existingTodo = todoRepository.findById(id);
-        if (existingTodo.isPresent()) {
-            Todo updatedTodo = existingTodo.get();
-            updatedTodo.setTitle(todo.getTitle());
-            updatedTodo.setCompleted(todo.isCompleted());
-            return todoRepository.save(updatedTodo);
-        }
-        return null;
+        return todoRepository.findById(id)
+                   .map(existingTodo -> {
+                       existingTodo.setTitle(todo.getTitle());
+                       existingTodo.setCompleted(todo.isCompleted());
+                       return todoRepository.save(existingTodo);
+                   })
+                   .orElse(null); // Or throw an exception here.
     }
+
+    
 
     public void deleteTodo(Long id) {
         todoRepository.deleteById(id);
