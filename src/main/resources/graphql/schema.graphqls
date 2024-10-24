@@ -1,0 +1,18 @@
+type Customer {
+    id: ID!
+    name: String!
+    email: String!
+    phone: String
+}
+
+type Query {
+    getAllCustomers: [Customer]
+    getCustomerById(id: ID!): Customer
+    searchCustomers(name: String, email: String, phone: String, page: Int, size: Int): [Customer]
+}
+
+type Mutation {
+    createCustomer(name: String!, email: String!, phone: String): Customer
+    updateCustomer(id: ID!, name: String!, email: String!, phone: String): Customer
+    deleteCustomer(id: ID!): Boolean
+}
