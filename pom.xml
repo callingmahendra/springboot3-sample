@@ -68,15 +68,10 @@
 	    <version>2.6.0</version>
 	</dependency>
 	<dependency>
-		<groupId>com.graphql-java-kickstart</groupId>
-		<artifactId>graphql-spring-boot-starter</artifactId>
-		<version>11.1.0</version>
-	</dependency>
-	<dependency>
-		<groupId>com.graphql-java-kickstart</groupId>
-		<artifactId>graphiql-spring-boot-starter</artifactId>
-		<version>11.1.0</version>
-	</dependency>
+  <groupId>com.graphql-java-kickstart</groupId>
+  <artifactId>graphql-spring-boot-starter</artifactId>
+  <version>14.0.0</version>
+</dependency>
 	<dependency>
    <groupId>com.graphql-java</groupId>
    <artifactId>graphql-java-tools</artifactId>
