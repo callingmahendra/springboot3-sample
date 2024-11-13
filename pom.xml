@@ -59,7 +59,7 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</artifactId>
+			<scope>test</scope>
 		</dependency>
 
 	<dependency>
@@ -77,6 +77,11 @@
 		<artifactId>graphiql-spring-boot-starter</artifactId>
 		<version>11.1.0</version>
 	</dependency>
+	<dependency>
+   <groupId>com.graphql-java</groupId>
+   <artifactId>graphql-java-tools</artifactId>
+   <version>5.2.4</version>
+</dependency>
 	</dependencies>
 
 	<build>
