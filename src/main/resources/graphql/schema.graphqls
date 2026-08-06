@@ -5,14 +5,26 @@ type Customer {
     phone: String
 }
 
+type Student {
+    id: ID!
+    name: String!
+    email: String!
+    phone: String
+}
+
 type Query {
     getAllCustomers: [Customer]
     getCustomerById(id: ID!): Customer
     searchCustomers(name: String, email: String, phone: String, page: Int, size: Int): [Customer]
+    getAllStudents: [Student]
+    getStudentById(id: ID!): Student
 }
 
 type Mutation {
     createCustomer(name: String!, email: String!, phone: String): Customer
     updateCustomer(id: ID!, name: String!, email: String!, phone: String): Customer
     deleteCustomer(id: ID!): Boolean
+    createStudent(name: String!, email: String!, phone: String): Student
+    updateStudent(id: ID!, name: String!, email: String!, phone: String): Student
+    deleteStudent(id: ID!): Boolean
 }
